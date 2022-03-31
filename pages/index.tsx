@@ -1,13 +1,6 @@
 import type { GetServerSideProps, NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import { useState } from "react";
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  return {
-    props: {}, // will be passed to the page component as props
-  };
-};
+import { useState } from "react";
 
 const Home: NextPage = () => {
   const [input, setInput] = useState("");
