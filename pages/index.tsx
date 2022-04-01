@@ -1,6 +1,6 @@
 import type { GetServerSideProps, NextPage } from "next";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
   const [input, setInput] = useState("");
@@ -8,6 +8,10 @@ const Home: NextPage = () => {
   function handleSubmit() {
     setMessages([...messages, input]);
   }
+  useEffect(() => {
+    console.log("lol");
+  }, []);
+
   return (
     <div>
       <div>
@@ -31,6 +35,11 @@ const Home: NextPage = () => {
         >
           Senden
         </button>
+      </div>
+      <div>
+        {messages.map((message) => (
+          <div>{message}</div>
+        ))}
       </div>
     </div>
   );
